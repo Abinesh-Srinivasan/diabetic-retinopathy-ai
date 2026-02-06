@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+
+# Environments
+.env
+.venv
+venv/
+
+# Data (DO NOT PUSH)
+data/
+train_images/
+prepare_dataset_full.py
+train.csv
+
+# Model weights
+*.h5
+*.keras
+
+# OS / Editor
+.DS_Store
+.vscode/
+.ipynb_checkpoints/

@@ -1,0 +1,11 @@
+CNN - Training Time: ~ 1hr15m
+eval accuracy = 58%
+TEST ACCURACY = 61%
+
+ViT - Training Time: ~ 2hr
+eval accuracy = 84%
+TEST ACCURACY = 83%
+
+Hybrid - Training Time: ~ 2hr
+eval accuracy = 85%
+TEST ACCURACY = 85%
