@@ -1,4 +1,5 @@
-# Diabetic Retinopathy Detection using CNN, Vision Transformer & Hybrid Models
+# Diabetic Retinopathy Detection
+# Academic Final Year Project
 
 ## Overview
 This project focuses on automated **Diabetic Retinopathy (DR) classification** from retinal fundus images using deep learning.  
@@ -143,7 +144,7 @@ If using VS Code:
   5. Open terminal and run: python --version
   6. You should see: Python 3.11.x
   7. Open new terminal and ensure the terminal shows (dr_ai) before running any script
-
+---
 
 ### 2️⃣ Clone the repository
 ```bash
@@ -151,8 +152,9 @@ git clone https://github.com/Abinesh-Srinivasan/diabetic-retinopathy-ai.git
 cd diabetic-retinopathy-ai
 pip install -r requirements.txt
 ```
+---
 
-### Dataset Download and Setup
+### 3️⃣ Dataset Download and Setup
 
 The dataset used in this project is **not included in the repository** due to its large size and licensing restrictions.
 
@@ -173,33 +175,53 @@ After downloading:
 ### Step 3: Place Dataset in Project Root
 Move the extracted dataset contents into the **project root directory**
 
-### 3️⃣ Model Training
+---
+
+### 4️⃣ Model Training
 ```bash
 python train/train_cnn.py
 python train/train_vit.py
 python train/train_hybrid.py
 ```
+---
 
-### 4️⃣ Evaluating Model
+### 5️⃣ Evaluating Model
 ```bash
 python eval/eval_cnn.py
 python eval/eval_vit.py
 python eval/eval_hybrid.py
 ```
+---
 
-### 5️⃣ Testing Model
+### 6️⃣ Testing Model
 ```bash
 python test/test_cnn.py
 python test/test_vit.py
 python test/test_hybrid.py
 ```
+---
 
 ## Final Performance (Test Accuracy)
 
-| Model | Test Accuracy |
-|------|---------------|
-| CNN | 61% |
-| Vision Transformer (ViT) | 83% |
-| Hybrid CNN–ViT | **85%** |
+| Model | Training Time | Eval Accuracy | Test Accuracy |
+|------|---------------|---------------|---------------|
+| CNN | ~1 hr 15 min | 58% | 61% |
+| Vision Transformer (ViT) | ~2 hr | 84% | 83% |
+| Hybrid CNN–ViT | ~2 hr | **85%** | **85%** |
+
+**Interpretation:** The hybrid CNN–ViT model achieves the best generalization on unseen data by effectively combining local lesion-level features with global contextual representations.
 
 ---
+
+## Conclusion
+This project demonstrates that integrating convolutional neural networks with transformer-based architectures leads to improved performance in multi-class diabetic retinopathy classification. The results highlight the importance of combining local and global feature learning, along with explainable AI techniques, to build reliable and interpretable medical imaging systems.
+
+---
+
+## Acknowledgement
+We thank the open-source community and dataset providers for enabling research in medical image analysis.
+
+---
+
+## Disclaimer
+This project is intended strictly for **academic and research purposes only** and must not be used as a standalone medical diagnostic tool.
