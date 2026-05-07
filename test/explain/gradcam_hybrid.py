@@ -1,6 +1,7 @@
 import sys, os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+sys.path.append(PROJECT_ROOT)
 
 import tensorflow as tf
 import numpy as np
@@ -9,10 +10,11 @@ import cv2
 from models.hybrid_model import build_hybrid
 from utils.preprocessing import preprocess_image
 from utils.explainability import make_gradcam_heatmap, overlay_gradcam
+from utils.project_paths import project_path
 
 # ---------------- CONFIG ---------------- #
-IMAGE_PATH = "data/test/2/d9a475dfe59a.png"  # change this
-WEIGHTS_PATH = "hybrid_best.h5"
+IMAGE_PATH = project_path("data", "test", "2", "d9a475dfe59a.png")  # change this
+WEIGHTS_PATH = project_path("hybrid_best.h5")
 LAST_CONV_LAYER = "top_conv"  # EfficientNetB3 last conv layer
 # ---------------------------------------- #
 

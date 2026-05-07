@@ -1,7 +1,8 @@
 import sys
 import os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.append(PROJECT_ROOT)
 
 
 import numpy as np
@@ -9,9 +10,12 @@ from keras.models import load_model
 from sklearn.metrics import classification_report, accuracy_score
 
 from utils.dataset import FundusDataset
+from utils.project_paths import project_path
 
-val_data = FundusDataset("data/val", batch_size=16, num_classes=5, shuffle=False)
-model = load_model("cnn_best.h5")
+val_data = FundusDataset(
+    project_path("data", "val"), batch_size=16, num_classes=5, shuffle=False
+)
+model = load_model(project_path("cnn_best.h5"))
 
 y_true, y_pred = [], []
 

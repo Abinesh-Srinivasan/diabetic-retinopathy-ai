@@ -1,7 +1,8 @@
 import sys
 import os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.append(PROJECT_ROOT)
 
 
 import numpy as np
@@ -9,14 +10,17 @@ from sklearn.metrics import classification_report, accuracy_score
 
 from models.hybrid_model import build_hybrid
 from utils.dataset import FundusDataset
+from utils.project_paths import project_path
 
 NUM_CLASSES = 5
 BATCH_SIZE = 16
 
-test_data = FundusDataset("data/test", BATCH_SIZE, NUM_CLASSES, shuffle=False)
+test_data = FundusDataset(
+    project_path("data", "test"), BATCH_SIZE, NUM_CLASSES, shuffle=False
+)
 
 model = build_hybrid(num_classes=NUM_CLASSES)
-model.load_weights("hybrid_best.h5")
+model.load_weights(project_path("hybrid_best.h5"))
 
 y_true, y_pred = [], []
 

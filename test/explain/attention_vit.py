@@ -1,14 +1,16 @@
 import sys, os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+sys.path.append(PROJECT_ROOT)
 
 import cv2
 import numpy as np
 from vit_keras import vit, visualize
+from utils.project_paths import project_path
 
 # ---------------- CONFIG ---------------- #
-IMAGE_PATH = "data/test/3/e8d1c6c07cf2.png"  # real image
-MODEL_WEIGHTS = "vit_best.h5"
+IMAGE_PATH = project_path("data", "test", "3", "e8d1c6c07cf2.png")  # real image
+MODEL_WEIGHTS = project_path("vit_best.h5")
 IMAGE_SIZE = 224
 # ---------------------------------------- #
 
